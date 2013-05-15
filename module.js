@@ -1,4 +1,4 @@
-//W.js by tangoboy[https://github.com/fengdi/w.js]
+//W.js by tangoboy[https://github.com/fengdi/w.js][Apache license]
 ;(function(G, S, U){
 var P = 'prototype',
 	D = document,
