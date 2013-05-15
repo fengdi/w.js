@@ -220,7 +220,7 @@ var P = 'prototype',
 //=\\=//=\\=//=\\=//=\\= W.js End //=\\=//=\\=//=\\=//=\\=
 
 (function(f){
-	try{f()}catch(e){$.log($.id, e+"")}
+	try{f()}catch(e){$.log(e+"")}
 })(function(){
 
 	//这里开始写代码！！！！！
