@@ -58,7 +58,7 @@ var P = 'prototype',
 		}
 	},
 	find = function(s, c){
-		return (c||S).all(s).c_getDOMNodes()||U;
+		return (c ? S.all(c.toA ? c.toA() : c) : S).all(s).c_getDOMNodes()||[];
 	};
 	function W(selector, context){
 		return new W.fn.init(selector, context);
