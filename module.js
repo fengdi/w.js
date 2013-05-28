@@ -1,12 +1,21 @@
 //W.js by tangoboy[https://github.com/fengdi/w.js][Apache license]
 ;(function(G, S, U){
-var P = 'prototype',
+var APIS = "c_getDOMNodes,end,equals,c_add,item,slice,scrollTop,scrollLeft,height,width," +
+	"c_appendTo,c_prependTo,c_insertBefore,c_insertAfter,c_animate,stop,run,pause," +
+	"resume,isRunning,isPaused,show,hide,toggle,fadeIn,fadeOut,fadeToggle,slideDown," +
+	"slideUp,slideToggle,c_filter,test,clone,empty,replaceWith,parent,hasClass," +
+	"c_addClass,removeClass,replaceClass,toggleClass,val,text,toggle,offset," +
+	"scrollIntoView,c_next,c_prev,c_first,c_last,c_siblings,c_children,contains," +
+	"remove,contains,innerWidth,innerHeight,outerWidth,outerHeight,c_on,c_detach," +
+	"fire,all,c_delegate,c_attr,c_hasAttr,c_removeAttr,c_data,c_hasData,c_removeData,len",
+	P = 'prototype',
 	D = document,
 	DOM = S.DOM,
 	Anim = S.Anim,
 	Event = S.Event,
 	UA = S.UA,
 	IO = S.io,
+	JSON = S.JSON,
 	GUID = 0,
 	NOOP = function(){},
 	mix = function(a,b){
@@ -166,14 +175,7 @@ var P = 'prototype',
 			}
 		}
 	};
-	eachWords("c_getDOMNodes,end,equals,c_add,item,slice,scrollTop,scrollLeft,height,width," +
-	"c_appendTo,c_prependTo,c_insertBefore,c_insertAfter,c_animate,stop,run,pause," +
-	"resume,isRunning,isPaused,show,hide,toggle,fadeIn,fadeOut,fadeToggle,slideDown," +
-	"slideUp,slideToggle,c_filter,test,clone,empty,replaceWith,parent,hasClass," +
-	"c_addClass,removeClass,replaceClass,toggleClass,val,text,toggle,offset," +
-	"scrollIntoView,c_next,c_prev,c_first,c_last,c_siblings,c_children,contains," +
-	"remove,contains,innerWidth,innerHeight,outerWidth,outerHeight,c_on,c_detach," +
-	"fire,all,c_delegate,c_attr,c_hasAttr,c_removeAttr,c_data,c_hasData,c_removeData,len", function(word){
+	eachWords(APIS, function(word){
 			var base = word.replace(/^c_/,"");
 			W.fn[base] = W[P][base] = function(){
 				var elems = S.all(this.toA());
@@ -208,6 +210,7 @@ var P = 'prototype',
 		Anim:Anim,
 		type:type,
 		io:IO,
+		JSON:JSON,
 		tpl:S.substitute,
 		camelize:camelize
 	});
